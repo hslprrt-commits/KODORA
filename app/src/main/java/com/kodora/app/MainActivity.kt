@@ -214,12 +214,17 @@ fun HomeScreen(onNavigate: (String) -> Unit) {
         item {
             Spacer(modifier = Modifier.height(10.dp))
 
-            Text(
-                text = "KODORA • Version 1.0",
-                color = TextGray,
-                fontSize = 11.sp,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            )
+            // تم استبدال modifier.align بـ Box لضمان توسط النص بدون أخطاء تجميع
+            Box(
+                modifier = Modifier.fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "KODORA • Version 1.0",
+                    color = TextGray,
+                    fontSize = 11.sp
+                )
+            }
         }
     }
 }
